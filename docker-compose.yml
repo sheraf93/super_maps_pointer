@@ -1,8 +1,35 @@
-flask_app:
-  build: .
-  ports:
-   - '5000:5000'
-  volumes:
-   - .:/super_maps_pointer
-  env_file:
-    - .app.env
+version: '3'
+services:
+
+  postgres:
+    restart: always
+    image: postgres:10
+    env_file:
+      - .super_maps_pointer.env
+    ports:
+      - '5432:5432'
+    volumes:
+      - supermapspointer-postgres:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  flask_app:
+    build: .
+    links:
+      - postgres
+    depends_on:
+      - postgres
+    ports:
+      - '5000:5000'
+    volumes:
+      - .:/super_maps_pointer
+    env_file:
+      - .super_maps_pointer.env
+    networks:
+      - backend
+
+volumes:
+  supermapspointer-postgres:
+
+networks:
+  backend:
