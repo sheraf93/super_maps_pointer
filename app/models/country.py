@@ -13,7 +13,7 @@ class Country(Base, Timestamp):
     name = Column(String, unique=True)
     capital = Column(String)
 
-    def __init__(self, name=None, capital=None):
+    def __init__(self, name, capital):
         self.name = name
         self.capital = capital
 

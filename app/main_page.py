@@ -32,7 +32,8 @@ def add_country():
     # mount country object
     posted_country = CountrySchema(only=('name', 'capital')).load(request.get_json())
 
-    country = Country(**posted_country.data, created_by="HTTP post request")
+    print(posted_country.data)
+    country = Country(**posted_country.data)
 
     # persist country
     db_session.add(country)
