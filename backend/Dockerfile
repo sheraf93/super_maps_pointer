@@ -9,9 +9,9 @@ ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
 # -- Install Application into container:
-RUN set -ex && mkdir /super_maps_pointer
+RUN set -ex && mkdir -p /super_maps_pointer/backend
 
-WORKDIR /super_maps_pointer
+WORKDIR /super_maps_pointer/backend
 
 # -- Adding Pipfiles
 COPY Pipfile Pipfile
