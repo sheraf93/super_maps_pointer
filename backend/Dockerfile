@@ -1,6 +1,6 @@
 FROM python:3.6
 
-LABEL maintainer "chretien.max@gmail.com"
+LABEL authors="kruupos"
 
 # -- Install Pipenv:
 RUN pip3 install pipenv

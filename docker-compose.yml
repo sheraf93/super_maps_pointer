@@ -30,8 +30,24 @@ services:
     networks:
       - backend
 
+  angular_app:
+    build: 
+      context: './frontend'
+    command: 'npm start'
+    ports:
+      - '4200:4200' 
+      - '49153:49153'
+    expose:
+      - '4200'
+      - '49153'
+    volumes:
+      - .:/super_maps_pointer
+    networks:
+      - frontend
+
 volumes:
   supermapspointer-postgres:
 
 networks:
   backend:
+  frontend:
