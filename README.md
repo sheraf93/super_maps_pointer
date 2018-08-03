@@ -45,7 +45,7 @@ docker-compose up -d
 docker-compose up
 ```
 
-Then please go to [localhost:5000](127.0.0.1:5000)
+Then please go to [localhost:8000](127.0.0.1:8000)
 
 ## Can I play online?
 

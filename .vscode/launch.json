@@ -9,7 +9,7 @@
             "localRoot": "${workspaceFolder}",
             "remoteRoot": "/super_maps_pointer",
             "port": 3000,
-            "secret": "my_secret",
+            "secret": "debugVSCODE",
             "host": "localhost"
         }
     ]

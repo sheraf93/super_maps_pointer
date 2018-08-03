@@ -30,9 +30,8 @@ def get_countries():
 @main_page.route('/countries', methods=['POST'])
 def add_country():
     # mount country object
-    posted_country = CountrySchema(only=('name', 'capital')).load(request.get_json())
-
-    print(posted_country.data)
+    posted_country = CountrySchema(only=('name', 'capital')
+                                   ).load(request.get_json())
     country = Country(**posted_country.data)
 
     # persist country

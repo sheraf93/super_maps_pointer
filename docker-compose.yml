@@ -20,7 +20,8 @@ services:
     depends_on:
       - postgres
     ports:
-      - '5000:5000'
+      - '8000:8000'
+      - '3000:3000'
     volumes:
       - .:/super_maps_pointer
     env_file:

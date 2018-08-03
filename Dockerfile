@@ -1,6 +1,6 @@
 FROM python:3.6
 
-MAINTAINER kruupos <chretien.max@gmail.com>
+LABEL maintainer "chretien.max@gmail.com"
 
 # -- Install Pipenv:
 RUN pip3 install pipenv
@@ -20,5 +20,7 @@ COPY Pipfile.lock Pipfile.lock
 # -- Install dependencies:
 RUN set -ex && pipenv install --deploy --system --ignore-pipfile
 
+EXPOSE 8000/tcp
+
 # -- Run flask:
-CMD flask run -h 0.0.0.0
+CMD flask run -h 0.0.0.0 -p 8000 --no-debugger --no-reload
