@@ -6,6 +6,7 @@ from sqlalchemy_utils import Timestamp
 
 from app.database import Base
 
+
 class Country(Base, Timestamp):
     __tablename__ = 'countries'
 
