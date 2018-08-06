@@ -1,24 +1,11 @@
-# super_maps_pointer
+# SUPER MAPS POINTER
 
 Super maps pointer is yet another game intended to upgrade for geography skills while having fun :D
 
 ## With what technologies?
 
-* Python version 3.6
-
-### Backend
-
-Using [Flask](http://flask.pocoo.org/) the python microframework.
-
-#### Note:
-
-For pythonista and developers, a `Pipfile` have been used instead of `requirements.txt` and `venv`.
-Therefore, to install new packages, one need to use `pipenv install <package>` instead of `pip install <package>`.
-
-### Frontend (Not setup yet)
-
-* [AngularJS](https://angularjs.org/)
-* D3.JS
+* Flask version 1.0.2
+* Angular version version 6.1.2
 
 ## Requierments
 
@@ -28,16 +15,25 @@ Therefore, to install new packages, one need to use `pipenv install <package>` i
 
 ### Setup
 
-Clone this repository.
-This app is running with `Docker`. First install it (It has been tested on UNIX and Windows env).
+1. Clone this repository. 
 
-In order to run the app, launch the following command:
+```bash
+git clone https://github.com/sheraf93/super_maps_pointer.git
+```
 
-### Initialize volume and databases
+2. Install Docker
+
+This app is running with `Docker`. This [link] for how to install it.
+
+3. Initialize volume and databases using docker-compose
+
+In order to Initialize volume and databases, launch the following command:
 
 ```bash
 docker-compose up -d
 ```
+
+Make sure you are in the root folder, because the file `docker-compose.yml` will use `Dockerfile`s in both backend and frontend folders.
 
 #### Run the app
 
@@ -45,11 +41,20 @@ docker-compose up -d
 docker-compose up
 ```
 
-Then please go to [localhost:8000](127.0.0.1:8000)
+If all containers are up without problems:
+  - `super_maps_pointer_flask_app`
+  - `super_maps_pointer_angular_app`
+  - `postgres:10`
+
+Then you can now starting using the app in [localhost:4200](127.0.0.1:4200)
+
+**Note for windows users**: sometimes Docker for windows have trouble copying the files into the containers, most of the time you just have to restart Docker to make it work.
 
 ## Can I play online?
 
-Not yet, but the project will be hosted by `heroku` once it will be mature enough according to the dev team
+Not yet, but the project will be hosted by `heroku` once it will be mature enough according to the dev team.
+
+**Note for devs**: There is already vscode folder for debugging the app in both backend and frontend folders. 
 
 ### Can I help?
 
