@@ -14,17 +14,17 @@ Super maps pointer is yet another game intended to upgrade for geography skills 
 
 ## Setup
 
-### 1. Clone this repository. 
+#### 1. Clone this repository. 
 
 ```bash
 git clone https://github.com/sheraf93/super_maps_pointer.git
 ```
 
-### 2. Install Docker
+#### 2. Install Docker
 
 This app is running with `Docker`. This [link] for how to install it.
 
-### 3. Initialize volume and databases using docker-compose
+#### 3. Initialize volume and databases using docker-compose
 
 In order to Initialize volume and databases, launch the following command:
 
@@ -34,7 +34,7 @@ docker-compose up -d
 
 Make sure you are in the root folder, because the file `docker-compose.yml` will use `Dockerfile`s in both backend and frontend folders.
 
-#### 4. Run the app
+### 4. Run the app
 
 ```bash
 docker-compose up
