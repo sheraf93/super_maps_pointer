@@ -1,6 +1,6 @@
 # SUPER MAPS POINTER
 
-Super maps pointer is yet another game intended to upgrade for geography skills :earth_africa: while having fun :smile:
+Super maps pointer is yet another game intended to upgrade your geography skills :earth_africa: while having fun! :smile:
 
 ### With what technologies?
 
