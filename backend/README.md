@@ -1,4 +1,4 @@
-# Backend
+# BACKEND
 
 Using [Flask](http://flask.pocoo.org/) the python microframework.
 
@@ -14,7 +14,6 @@ A `Pipfile` have been used instead of old `requirements.txt` and `venv`.
 Therefore, to install new packages, one need to use `pipenv install <package>` instead of `pip install <package>`.
 
 1. Make sure you have python 3.6 installed on your machine
-
 2. Install pipenv
 
 In backend folder, uses
