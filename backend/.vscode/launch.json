@@ -1,0 +1,17 @@
+// .vscode/launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python: Attach debugger",
+            "type": "python",
+            "request": "attach",
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "/super_maps_pointer",
+            "port": 3000,
+            "secret": "debugVSCODE",
+            "host": "localhost"
+        }
+    ]
+}

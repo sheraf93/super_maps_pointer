@@ -1,0 +1,53 @@
+version: '3'
+services:
+
+  postgres:
+    restart: always
+    image: postgres:10
+    env_file:
+      - backend/.super_maps_pointer.env
+    ports:
+      - '5432:5432'
+    volumes:
+      - supermapspointer-postgres:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  flask_app:
+    build: 
+      context: './backend'
+    links:
+      - postgres
+    depends_on:
+      - postgres
+    ports:
+      - '8000:8000'
+      - '3000:3000'
+    volumes:
+      - .:/super_maps_pointer
+    env_file:
+      - backend/.super_maps_pointer.env
+    networks:
+      - backend
+
+  angular_app:
+    build: 
+      context: './frontend'
+    command: 'npm start'
+    ports:
+      - '4200:4200' 
+      - '49153:49153'
+    expose:
+      - '4200'
+      - '49153'
+    volumes:
+      - .:/super_maps_pointer
+    networks:
+      - frontend
+
+volumes:
+  supermapspointer-postgres:
+
+networks:
+  backend:
+  frontend:
