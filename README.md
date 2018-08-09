@@ -29,7 +29,8 @@ This app is running with `Docker`. This [link] for how to install it.
 In order to Initialize volume and databases, launch the following command:
 
 ```bash
-docker-compose up -d
+# First, initialize the database , because it make longer to create than the flask app and will conflict with docker-compose up
+docker-compose up postgresql
 ```
 
 Make sure you are in the root folder, because the file `docker-compose.yml` will use `Dockerfile`s in both backend and frontend folders.
@@ -46,6 +47,13 @@ If all containers are up without problems:
   - `postgres:10`
 
 Then you can now starting using the app in [localhost:4200](http://127.0.0.1:4200)
+
+### Reload the app
+
+1. Shut down the container with `docker-compose down`
+2. Reload the containers with `docker-compose up`
+
+**Note**: If you are using `docker-compose up -d` do not forget to kill the containers with `docker-compose down` to avoid stupid conflicts of having two apps running in parallel on the same ports.
 
 **Note for windows users**: sometimes Docker for windows have trouble copying the files into the containers, most of the time you just have to restart Docker to make it work.
 

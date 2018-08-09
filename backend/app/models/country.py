@@ -25,3 +25,4 @@ class CountrySchema(Schema):
     capital = fields.Str()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()
+    
